@@ -1,12 +1,56 @@
-open voice 에서 직접 사용하려고 만든 코드
-requirement
-cuda only, openvoice checkpoint version 2
-경로는 압축해제된 내용을 메인으로 끌어냄
+# OpenVoice Batch Processing Tool
 
-주요 변경사항:
-input 폴더안의 txt를 모두 읽어서 output 폴더로 파일명을 그대로 유지한체 생성하도록함
-강의 영상 제목 그대로 가져다 올 수 있는 것이 장점
+## Overview
+A customized implementation of OpenVoice for batch processing text-to-speech conversion. This tool is designed to process multiple text files simultaneously while maintaining original filenames, making it particularly useful for educational content creation.
 
-변경 예정
-시간 정보를 활용해서 스피드를 조정할 수 있도록 할 예정
-빠르게 말하면 빠르게 따라서 가고 아니면 천천히 가도록
+## Requirements
+- CUDA-enabled GPU
+- OpenVoice Checkpoint Version 2
+- Python 3.9 #ONLY
+
+## Installation
+1. Extract the OpenVoice checkpoint files to the main directory
+2. Install required dependencies: follow origin method https://github.com/myshell-ai/OpenVoice/blob/main/docs/USAGE.md#openvoice-v2
+
+## Features
+### Current Implementation
+- **Batch Processing**: Automatically processes all text files from the `input` folder
+- **Filename Preservation**: Maintains original filenames in the `output` folder
+- **Educational Content Friendly**: Optimized for lecture title compatibility
+
+### Upcoming Features
+- **Dynamic Speech Rate Adjustment**
+  - Speech rate adaptation based on timestamp information
+  - Automatic speed adjustment for natural-sounding output
+  - Variable speed processing for different speech patterns
+
+## Directory Structure
+```
+.
+├── input/
+│   └── *.txt files
+├── output/
+│   └── generated audio files
+├── converter/
+├── resources
+│    └── clone target voice
+├── core.py
+└── read_tex.py
+```
+
+## Usage
+1. Place your text files in the `input` folder
+2. Run the script:
+```bash
+python read_tex.py
+```
+3. Generated audio files will be available in the `output` folder
+
+## Note
+This implementation currently supports CUDA-enabled devices only and requires OpenVoice checkpoint version 2.
+
+## License
+MIT 3.0
+
+---
+*For more information, please refer to the original OpenVoice repository.*
