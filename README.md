@@ -1,4 +1,4 @@
-# OpenVoice Batch Processing Tool
+# OpenVoice Sequential Processor 
 
 ## Overview
 A customized implementation of OpenVoice for batch processing text-to-speech conversion. This tool is designed to process multiple text files simultaneously while maintaining original filenames, making it particularly useful for educational content creation.
